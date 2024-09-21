@@ -1,0 +1,17 @@
+[
+{
+  "directory": "/home/jacfox14/MA1/build",
+  "command": "/usr/bin/g++    -Wall -g -std=gnu++11 -o CMakeFiles/MA1.dir/main.cpp.o -c /home/jacfox14/MA1/main.cpp",
+  "file": "/home/jacfox14/MA1/main.cpp"
+},
+{
+  "directory": "/home/jacfox14/MA1/build",
+  "command": "/usr/bin/g++    -Wall -g -std=gnu++11 -o CMakeFiles/MA1.dir/queue.cpp.o -c /home/jacfox14/MA1/queue.cpp",
+  "file": "/home/jacfox14/MA1/queue.cpp"
+},
+{
+  "directory": "/home/jacfox14/MA1/build",
+  "command": "/usr/bin/g++    -Wall -g -std=gnu++11 -o CMakeFiles/MA1.dir/testQueue.cpp.o -c /home/jacfox14/MA1/testQueue.cpp",
+  "file": "/home/jacfox14/MA1/testQueue.cpp"
+}
+]
