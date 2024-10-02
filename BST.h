@@ -139,24 +139,7 @@ template<typename Comparable>
 bool BST<Comparable>::contains( const Comparable & x ) const {
 	cout << "**TODO**: contains function" << endl;
 	
-	if (root == NULL) {
-		cout << "Tree is empty" << endl;
-		return false;
-	} else {
-		BinaryNode *current = root;
-		while (current != NULL) {
-			if (x < current->element) {
-				current = current->left;
-			} else if (x > current->element) {
-				current = current->right;
-			} else {
-				cout << "Element found" << endl;
-				return true;
-			}
-		}
-		cout << "Element not found" << endl;
-		return false;
-	}
+	return contains(x, root);
 }
 
 // public insert: refer to textbook, Figure 4.17, Line 12 - 15
@@ -213,10 +196,10 @@ void BST<Comparable>::printMaxPath() const {
 	printMaxPath(root);
 }
 
+// private remove
 template<typename Comparable>
 void BST<Comparable>::remove( const Comparable & x, BinaryNode * & t ) {
 	if (t == nullptr) {
-		// Item not found, do nothing
 		return;
 	}
 
@@ -244,6 +227,7 @@ void BST<Comparable>::remove( const Comparable & x, BinaryNode * & t ) {
 	}
 }
 
+// private insert
 template<typename Comparable>
 void BST<Comparable>::insert( const Comparable & x, BinaryNode * & t ) {
 	if (t == nullptr) {
@@ -260,6 +244,7 @@ void BST<Comparable>::insert( const Comparable & x, BinaryNode * & t ) {
 	}
 }
 
+// private contains
 template<typename Comparable>
 bool BST<Comparable>::contains( const Comparable & x, BinaryNode *t ) const {
 	if (t == nullptr) {
@@ -276,6 +261,7 @@ bool BST<Comparable>::contains( const Comparable & x, BinaryNode *t ) const {
 	}
 }
 
+// private treeSize
 template<typename Comparable>
 int BST<Comparable>::treeSize( BinaryNode *t ) const {
 	if (t == nullptr) {
@@ -286,6 +272,7 @@ int BST<Comparable>::treeSize( BinaryNode *t ) const {
 	}
 }
 
+// private treeHeight
 template<typename Comparable>
 int BST<Comparable>::treeHeight( BinaryNode *t ) const {
 	if (t == nullptr) {
@@ -296,6 +283,7 @@ int BST<Comparable>::treeHeight( BinaryNode *t ) const {
 	}
 }
 
+// private printInOrder
 template<typename Comparable>
 void BST<Comparable>::printInOrder( BinaryNode *t ) const {
 	if (t != nullptr) {
@@ -305,6 +293,7 @@ void BST<Comparable>::printInOrder( BinaryNode *t ) const {
 	}
 }
 
+// private printLevels
 template<typename Comparable>
 void BST<Comparable>::printLevels(BinaryNode* t) const {
     if (t == nullptr) {
@@ -335,13 +324,14 @@ void BST<Comparable>::printLevels(BinaryNode* t) const {
     }
 }
 
+// private printMaxPath
 template<typename Comparable>
 void BST<Comparable>::printMaxPath( BinaryNode *t ) const {
 	
 	if (t == nullptr)
 		return;
 
-	// Recursively find which path (left or right) has the maximum sum
+	
 	if (maxPathSum(t->left) > maxPathSum(t->right)) {
 		std::cout << t->element << " ";   // Print current node
 		printMaxPath(t->left);            // Go left
@@ -352,17 +342,18 @@ void BST<Comparable>::printMaxPath( BinaryNode *t ) const {
 
 }
 
+
+// private maxPathSum
 template<typename Comparable>
 int BST<Comparable>::maxPathSum(BinaryNode *t) const {
     if (t == nullptr) {
-        return 0;  // Base case: if node is null, the sum is 0
+        return 0;  // Base case
     }
 
-    // Recursively find the maximum path sum from the left and right subtrees
+    
     int leftSum = maxPathSum(t->left);
     int rightSum = maxPathSum(t->right);
 
-    // Return the maximum path sum including the current node's value
     return t->element + std::max(leftSum, rightSum);
 }
 
