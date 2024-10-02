@@ -1,0 +1,3 @@
+/home/jacfox14/MA2/build-dir/CMakeFiles/MA2.dir
+/home/jacfox14/MA2/build-dir/CMakeFiles/edit_cache.dir
+/home/jacfox14/MA2/build-dir/CMakeFiles/rebuild_cache.dir
