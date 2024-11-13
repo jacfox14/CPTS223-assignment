@@ -1,0 +1,3 @@
+/home/jacfox14/PA4/build-=dir/CMakeFiles/PA3.dir
+/home/jacfox14/PA4/build-=dir/CMakeFiles/edit_cache.dir
+/home/jacfox14/PA4/build-=dir/CMakeFiles/rebuild_cache.dir
